@@ -1,4 +1,4 @@
-import { runMiddleware, corsMiddleware } from "../../utils/apiMiddleware";
+import { runMiddleware, corsMiddleware } from "../../utils/middleware";
 
 export default async function handler(req, res) {
     await runMiddleware(req, res, corsMiddleware);

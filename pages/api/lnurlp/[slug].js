@@ -1,10 +1,10 @@
-import { runMiddleware, corsMiddleware } from "../../utils/apiMiddleware";
+import { runMiddleware, corsMiddleware } from "../../utils/middleware";
 
 const BACKEND_URL = process.env.BACKEND_URL
 
 export default async function handler(req, res) {
     await runMiddleware(req, res, corsMiddleware);
-    
+
     const { slug } = req.query
 
     if (!slug || slug === 'undefined') {
