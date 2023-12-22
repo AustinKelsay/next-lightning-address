@@ -1,9 +1,12 @@
 import axios from "axios"
 import crypto from "crypto"
+import runCors from "@/utils/cors";
 
 const BACKEND_URL = process.env.BACKEND_URL
 
 export default async function handler(req, res) {
+    if (!runCors(req, res)) return;
+    
     const { ...queryParams } = req.query
 
     if (queryParams.amount) {

@@ -1,5 +1,8 @@
+import runCors from "@/utils/cors";
 
 export default function handler(req, res) {
+    if (!runCors(req, res)) return;
+    
     const metadata = [
         ["text/plain", "Sample LNURL-PAY endpoint"]
     ];

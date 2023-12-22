@@ -1,7 +1,10 @@
 
 const BACKEND_URL = process.env.BACKEND_URL
+import runCors from "@/utils/cors";
 
 export default async function handler(req, res) {
+    if (!runCors(req, res)) return;
+    
     const { slug } = req.query
 
     if (!slug || slug === 'undefined') {
