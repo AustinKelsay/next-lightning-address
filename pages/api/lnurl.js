@@ -4,7 +4,7 @@ export default function handler(req, res) {
         ["text/plain", "Sample LNURL-PAY endpoint"]
     ];
     const response = {
-        callback: `${process.env.BACKEND_URL}/callback`,
+        callback: `${process.env.BACKEND_URL}/api/callback`,
         maxSendable: 100000000, // milisatoshis
         minSendable: 1000,      // milisatoshis
         metadata: JSON.stringify(metadata),
