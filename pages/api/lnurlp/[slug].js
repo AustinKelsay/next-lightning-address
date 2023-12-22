@@ -1,4 +1,4 @@
-import { runMiddleware, corsMiddleware } from "../../utils/middleware";
+import { runMiddleware, corsMiddleware } from "@/utils/middleware";
 
 const BACKEND_URL = process.env.BACKEND_URL
 
