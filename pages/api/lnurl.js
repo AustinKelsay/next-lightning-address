@@ -1,8 +1,8 @@
-import runCors from "@/utils/cors";
+import { runMiddleware, corsMiddleware } from "../../utils/apiMiddleware";
 
-export default function handler(req, res) {
-    if (!runCors(req, res)) return;
-    
+export default async function handler(req, res) {
+    await runMiddleware(req, res, corsMiddleware);
+
     const metadata = [
         ["text/plain", "Sample LNURL-PAY endpoint"]
     ];

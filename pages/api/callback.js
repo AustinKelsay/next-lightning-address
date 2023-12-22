@@ -1,11 +1,11 @@
 import axios from "axios"
 import crypto from "crypto"
-import runCors from "@/utils/cors";
+import { runMiddleware, corsMiddleware } from "../../utils/apiMiddleware";
 
 const BACKEND_URL = process.env.BACKEND_URL
 
 export default async function handler(req, res) {
-    if (!runCors(req, res)) return;
+    await runMiddleware(req, res, corsMiddleware);
     
     const { ...queryParams } = req.query
 

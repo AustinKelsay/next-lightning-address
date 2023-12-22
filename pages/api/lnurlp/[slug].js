@@ -1,9 +1,9 @@
+import { runMiddleware, corsMiddleware } from "../../utils/apiMiddleware";
 
 const BACKEND_URL = process.env.BACKEND_URL
-import runCors from "@/utils/cors";
 
 export default async function handler(req, res) {
-    if (!runCors(req, res)) return;
+    await runMiddleware(req, res, corsMiddleware);
     
     const { slug } = req.query
 
