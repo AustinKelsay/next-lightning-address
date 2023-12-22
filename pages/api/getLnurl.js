@@ -6,7 +6,7 @@ function encodeLnurl(url) {
 }
 
 export default function handler(req, res) {
-    const originalUrl = `${process.env.BACKEND_URL}/lnurl`
+    const originalUrl = `${process.env.BACKEND_URL}/api/lnurl`
     const encodedLnurl = encodeLnurl(originalUrl);
 
     res.status(200).json({
