@@ -31,7 +31,7 @@ export default async function handler(req, res) {
                 res.status(400).json({ error: 'Amount too high' })
                 return
             } else {
-                axios.post(`${BACKEND_URL}/api/lnd`, { amount: value, descriptionHash: descriptionHash })
+                axios.post(`${BACKEND_URL}/api/lnd`, { amount: value, description_hash: descriptionHash })
                     .then(function (response) {
                         res.status(200).json({ pr: response.data })
                     })
