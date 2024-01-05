@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
     if (slug === 'bitcoinplebdev') {
         const metadata = [
-            ["text/plain", "Sample LNURL-PAY endpoint"]
+            ["text/plain", "Sample LN-ADDRESS endpoint"]
         ];
 
         res.status(200).json({ 

@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     if (slug === 'bitcoinplebdev') {
         if (queryParams.amount) {
             const metadata = [
-                ["text/plain", "Sample LNURL-PAY endpoint"]
+                ["text/plain", "Sample LN-ADDRESS endpoint"]
             ];
 
             const metadataString = JSON.stringify(metadata);

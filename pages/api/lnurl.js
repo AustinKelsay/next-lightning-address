@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     await runMiddleware(req, res, corsMiddleware);
 
     const metadata = [
-        ["text/plain", "Sample LNURL-PAY endpoint"]
+        ["text/plain", "Sample LN-ADDRESS endpoint"]
     ];
     const response = {
         callback: `${process.env.BACKEND_URL}/api/callback`,
