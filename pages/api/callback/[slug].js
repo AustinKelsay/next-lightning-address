@@ -21,9 +21,10 @@ export default async function handler(req, res) {
 
             const descriptionHash = Buffer.from(hash, 'hex').toString('base64'); // Encoding as base64
 
-            const value = parseInt(queryParams.amount);
+            // Convert amount from millisatoshis to satoshis
+            const value = parseInt(queryParams.amount) / 1000
 
-            if (value < 1000) {
+            if (value < 1) {
                 res.status(400).json({ error: 'Amount too low' })
                 return
             } else {
